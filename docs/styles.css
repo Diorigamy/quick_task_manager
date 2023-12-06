@@ -1,26 +1,43 @@
+/* styles.css */
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 0;
-}
-
-header,
-section,
-footer {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-}
-
-h1,
-h2 {
+    padding: 1%;
+    background-color: #f1edf0;
     color: #333;
+    border: #021506;
+}
+
+header {
+    background-color: #209751;
+    color: white;
+    text-align: center;
+    padding: 2em 0;
+}
+
+h1 {
+    margin: 10px;
+    font-size: 2em;
 }
 
 p {
-    color: #666;
+    margin: 0;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid #ddd;
+    border-style: groove;
+    border-radius: 5px;
+    background-color: rgb(199, 222, 208);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    content-wrap: wrap; /* Corrected the property name */
+}
+
+h2 {
+    color: #270436;
 }
 
 ul {
@@ -29,12 +46,58 @@ ul {
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.demo {
+    background-color: #b4d5c4;
+}
+
+.demo-images img {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s, border 0.3s; /* Added a transition for smoother hover effect */
+}
+
+.demo-images img:hover {
+    border: 1px solid #777;
+    transform: scale(1.2);
 }
 
 a {
-    color: #007BFF;
+    color: rgb(53, 123, 161);
     text-decoration: none;
-    font-weight: bold;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    width: 48%;
+    margin: 1%;
+    display: flex;
+    align-items: center;
+}
+
+.team-member img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+footer {
+    background-color: #021506;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
