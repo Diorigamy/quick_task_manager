@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick Task Manager</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body>
@@ -36,10 +36,10 @@
         <h2>See it in Action</h2>
         <p>Immerse yourself in the Quick Task Manager experience. Witness the seamless flow of productivity through our interactive demo:</p>
         <div class="demo-images">
-            <img src="image1.png" alt="Image 1" class="demo-image">
-            <img src="image2.jpg" alt="Image 2" class="demo-image">
-            <img src="image3.png" alt="Image 3" class="demo-image">
-            <img src="image4.png" alt="Image 4" class="demo-image">
+            <img src="{{ url_for('static', filename='image1.png') }}" alt="Task Creation" class="demo-image">
+            <img src="{{ url_for('static', filename='image2.jpg') }}" alt="Priority Management" class="demo-image">
+            <img src="{{ url_for('static', filename='image3.png') }}" alt="Intuitive Interface" class="demo-image">
+            <img src="{{ url_for('static', filename='image4.png') }}" alt="Efficient Task Editing" class="demo-image">
         </div>
     </section>
 
@@ -54,7 +54,7 @@
         <p>Our dream team is passionate about transforming the way you manage tasks. Get to know the brilliant minds shaping the future:</p>
         <!-- Lewis Wangui -->
         <div class="team-member">
-            <img src="wangui.jpg" alt="lewis">
+            <img src="{{ url_for('static', filename='wangui.jpg') }}" alt="lewis">
             <p>
                 Lewis Wangui<br>
                 <a href="https://www.linkedin.com/in/" target="_blank">LinkedIn</a><br>
@@ -65,7 +65,7 @@
 
         <!-- Carolina Nyakio -->
         <div class="team-member">
-            <img src="nyakio.jpg" alt="carol">
+            <img src="{{ url_for('static', filename='nyakio.jpg') }}" alt="carol">
             <p>
                 Carolina Nyakio<br>
                 <a href="https://www.linkedin.com/in/" target="_blank">LinkedIn</a><br>
@@ -75,17 +75,22 @@
         </div>
     </section>
 
+    <section class="create-task">
+        <h2>Create a New Task</h2>
+        <form action="{{ url_for('create_task') }}" method="post">
+            <label for="task-description">Task Description:</label>
+            <input type="text" id="task-description" name="task_description" required>
+            <button type="submit">Create Task</button>
+        </form>
+    </section>
+
     <footer>
         <p>&copy; 2023 Elevate Your Productivity with Quick Task Manager</p>
         <p> 2023 Portfolio Project for <a href="https://www.holbertonschool.com/" target="_blank"> Holberton School </a><br> & <a href="https://www.alxafrica.com/target="_blank">ALX Leadership Africa</a><br></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>
-
-
-
-  
 
