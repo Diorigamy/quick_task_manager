@@ -10,3 +10,7 @@ class Task(db.Model):
     priority = db.Column(db.String(10))
     due_date = db.Column(db.Date)
 
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+

@@ -33,6 +33,11 @@ def delete_task(task_id):
         db.session.commit()
     return redirect(url_for('index'))
 
+# New route for the app page
+@app.route('/app')
+def app_page():
+    tasks = Task.query.all()
+    return render_template('app.html', tasks=tasks)
+
 if __name__ == '__main__':
     app.run(debug=True)
-

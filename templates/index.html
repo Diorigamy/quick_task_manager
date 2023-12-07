@@ -47,6 +47,20 @@
         <h2>Get Your Hands on the Code</h2>
         <p>Ready to explore the magic behind Quick Task Manager? Dive into the code on GitHub and witness the brilliance:</p>
         <p>GitHub Repository: <a href="https://github.com/Diorigamy/quick_task_manager" target="_blank">Quick Task Manager Repository</a></p>
+        <a href="{{ url_for('app_page') }}">Go to App</a>
+    </section>
+    <section class="task-management">
+        <h2>Task Management</h2>
+        <form action="{{ url_for('create_task') }}" method="post">
+            <label for="description">Task Description:</label>
+            <input type="text" id="description" name="description" required>
+            <button type="submit">Add Task</button>
+        </form>
+        <ul>
+            {% for task in tasks %}
+                <li>{{ task.description }} - <a href="{{ url_for('delete_task', task_id=task.id) }}">Delete</a></li>
+            {% endfor %}
+        </ul>
     </section>
 
     <section class="team-members">
@@ -75,14 +89,14 @@
         </div>
     </section>
 
-    <section class="create-task">
+    <!--<section class="create-task">
         <h2>Create a New Task</h2>
         <form action="{{ url_for('create_task') }}" method="post">
             <label for="task-description">Task Description:</label>
             <input type="text" id="task-description" name="task_description" required>
             <button type="submit">Create Task</button>
         </form>
-    </section>
+    </section>--->
 
     <footer>
         <p>&copy; 2023 Elevate Your Productivity with Quick Task Manager</p>
